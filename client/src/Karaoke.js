@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState, useRef, useEffect } from "react";
 import { Lrc } from "@mebtte/react-lrc";
 import "./App.css";
 
@@ -8,6 +8,12 @@ function Karaoke({ lrc }) {
   const [timer, setTimer] = useState(0);
   const [timing, setTiming] = useState(false);
   const increment = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      handleReset();
+    };
+  }, []);
 
   const handleStart = () => {
     setTiming(true);

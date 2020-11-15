@@ -14,7 +14,8 @@ function Add() {
     document.title = `Add a song`;
   }, []);
 
-  function add() {
+  function add(e) {
+    e.preventDefault();
     setLoaded(false);
     let data = {
       title: title,

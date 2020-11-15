@@ -100,6 +100,13 @@ function Song() {
                 </table>
                 <button onClick={flipKaraoke}>Turn on karaoke</button>
                 <button onClick={showModal}>Delete Song</button>
+                <NavLink
+                  className="table-link"
+                  to={`edit/${songID}`}
+                  exact={true}
+                >
+                  Edit Song
+                </NavLink>
               </>
             ) : (
               <p>Loading...</p>

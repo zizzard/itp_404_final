@@ -12,6 +12,7 @@ import Add from "./Add";
 import Home from "./Home";
 import Search from "./Search";
 import Song from "./Song";
+import EditSong from "./EditSong";
 import Songs from "./Songs";
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/song/:id" exact={true}>
           <Song />
+        </Route>
+        <Route path="/song/edit/:id" exact={true}>
+          <EditSong />
         </Route>
         <Route path="*">
           <div className="main-container">
