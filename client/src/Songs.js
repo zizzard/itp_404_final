@@ -7,6 +7,10 @@ function Songs() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    document.title = `Browse Songs`;
+  }, []);
+
+  useEffect(() => {
     setLoaded(false);
     fetch(`http://localhost:8080/songs`)
       .then((res) => res.json())

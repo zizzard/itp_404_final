@@ -10,6 +10,10 @@ function Add() {
   const [artist, setArtist] = useState("");
   const [length, setLength] = useState("");
 
+  useEffect(() => {
+    document.title = `Add a song`;
+  }, []);
+
   function add() {
     setLoaded(false);
     let data = {
@@ -68,8 +72,7 @@ function Add() {
             placeholder="Song length (seconds)..."
             className="add-field"
           />
-          <input
-            type="text"
+          <textarea
             value={lyrics}
             onChange={(e) => setLyrics(e.target.value)}
             placeholder="Song lyrics..."

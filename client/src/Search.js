@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SongTable from "./SongTable";
 import "./App.css";
 
@@ -6,6 +6,10 @@ function Search() {
   const [loaded, setLoaded] = useState(false);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    document.title = `Search for a song`;
+  }, []);
 
   function search() {
     setLoaded(false);

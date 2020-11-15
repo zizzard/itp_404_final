@@ -15,6 +15,9 @@ import Song from "./Song";
 import Songs from "./Songs";
 
 function App() {
+  useEffect(() => {
+    document.title = `The Karaoke Machine`;
+  }, [document.location.pathname]);
   return (
     <Router>
       <div className="header">
@@ -39,7 +42,9 @@ function App() {
           <Song />
         </Route>
         <Route path="*">
-          <h1>Page not found.</h1>
+          <div className="main-container">
+            <h1>Page not found.</h1>
+          </div>
         </Route>
       </Switch>
     </Router>
