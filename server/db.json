@@ -1,0 +1,20 @@
+{
+  "songs": [
+    {
+      "title": "Nikes",
+      "artist": "Frank Ocean",
+      "album": "Blonde",
+      "length": 314,
+      "lyrics": "testing the lyrics",
+      "id": "ud851y-H80yvxFq2tYPc5"
+    },
+    {
+      "title": "8701",
+      "artist": "JID",
+      "album": "The Never Story",
+      "length": 112,
+      "lyrics": "testing the lyrics",
+      "id": "7KbH3QOmkIYre0tXc6xXA"
+    }
+  ]
+}
