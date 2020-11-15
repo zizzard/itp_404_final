@@ -10,8 +10,11 @@ db.defaults({
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 const port = 8080;
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -70,7 +73,14 @@ app.post("/search", (req, res) => {
   res.send(result);
 });
 
-// URL: localhost:8080/delete/:id
+// URL: localhost:8080/song/:id
+// {
+//     "title": "Nikes",
+//     "artist": "Frank Ocean",
+//     "album": "Blonde",
+//     "length": 314,
+//     "lyrics": "testing the lyrics"
+// }
 app.patch("/song/:id", (req, res) => {
   let id = req.params.id;
   let changes = req.body;
