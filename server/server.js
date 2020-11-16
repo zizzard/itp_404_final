@@ -19,7 +19,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// URL: localhost:8080/song
+// URL: localhost:8080/api/song
 // Body:
 // {
 //     "title": "Nikes",
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 //     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
-app.post("/song", (req, res) => {
+app.post("api/song", (req, res) => {
   let id = nanoid();
   let post = req.body;
 
@@ -38,8 +38,8 @@ app.post("/song", (req, res) => {
   res.send(getSongById(id));
 });
 
-// URL: localhost:8080/song/:id
-app.get("/song/:id", (req, res) => {
+// URL: localhost:8080/api/song/:id
+app.get("api/song/:id", (req, res) => {
   let id = req.params.id;
 
   let song = getSongById(id);
@@ -47,25 +47,25 @@ app.get("/song/:id", (req, res) => {
   res.send(song);
 });
 
-// URL: localhost:8080/delete/:id
-app.delete("/song/:id", (req, res) => {
+// URL: localhost:8080/api/delete/:id
+app.delete("api/song/:id", (req, res) => {
   let id = req.params.id;
   let resp = deleteSong(id);
   res.send({});
 });
 
-// URL: localhost:8080/songs
-app.get("/songs", (req, res) => {
+// URL: localhost:8080/api/songs
+app.get("api/songs", (req, res) => {
   let songs = getSongs();
   res.send(songs);
 });
 
-// URL: localhost:8080/search
+// URL: localhost:8080/api/search
 // Body:
 // {
 //     "query": "search string"
 // }
-app.post("/search", (req, res) => {
+app.post("api/search", (req, res) => {
   let query = req.body.query;
 
   let result = searchSongs(query);
@@ -73,7 +73,7 @@ app.post("/search", (req, res) => {
   res.send(result);
 });
 
-// URL: localhost:8080/song/:id
+// URL: localhost:8080/api/song/:id
 // {
 //     "title": "Nikes",
 //     "artist": "Frank Ocean",
@@ -81,7 +81,7 @@ app.post("/search", (req, res) => {
 //     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
-app.patch("/song/:id", (req, res) => {
+app.patch("api/song/:id", (req, res) => {
   let id = req.params.id;
   let changes = req.body;
 
