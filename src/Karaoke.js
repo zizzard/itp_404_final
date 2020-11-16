@@ -2,8 +2,6 @@ import React, { useCallback, useState, useRef, useEffect } from "react";
 import { Lrc } from "@mebtte/react-lrc";
 import "./App.css";
 
-import { parseLrc } from "@mebtte/react-lrc";
-
 function Karaoke({ lrc }) {
   const [timer, setTimer] = useState(0);
   const [timing, setTiming] = useState(false);

@@ -11,7 +11,6 @@ function Song() {
   const [karaoke, setKaraoke] = useState(false);
   const [modalShown, setModalShown] = useState(false);
 
-  const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
@@ -27,7 +26,6 @@ function Song() {
     fetch(`http://localhost:8080/song/${id}`)
       .then((res) => res.json())
       .then((result) => {
-        setData(result);
         setTitle(result.title);
         setArtist(result.artist);
         setAlbum(result.album);

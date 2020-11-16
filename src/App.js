@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +18,7 @@ import Songs from "./Songs";
 function App() {
   useEffect(() => {
     document.title = `The Karaoke Machine`;
-  }, [document.location.pathname]);
+  }, []);
   return (
     <Router>
       <div className="header">
