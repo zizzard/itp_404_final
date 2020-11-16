@@ -25,7 +25,7 @@ function Add() {
       lyrics: lyrics,
     };
 
-    fetch(`http://localhost:8080/song`, {
+    fetch(`api/song`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

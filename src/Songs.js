@@ -12,7 +12,7 @@ function Songs() {
 
   useEffect(() => {
     setLoaded(false);
-    fetch(`http://localhost:8080/songs`)
+    fetch(`api/songs`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result);

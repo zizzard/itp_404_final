@@ -17,7 +17,7 @@ function Search() {
       query: query,
     };
 
-    fetch(`http://localhost:8080/search`, {
+    fetch(`api/search`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

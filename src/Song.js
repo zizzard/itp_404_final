@@ -23,7 +23,7 @@ function Song() {
 
   useEffect(() => {
     setLoaded(false);
-    fetch(`http://localhost:8080/song/${id}`)
+    fetch(`api/song/${id}`)
       .then((res) => res.json())
       .then((result) => {
         setTitle(result.title);
@@ -49,7 +49,7 @@ function Song() {
 
   function deleteSong() {
     setModalShown(false);
-    fetch(`http://localhost:8080/song/${songID}`, {
+    fetch(`api/song/${songID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
