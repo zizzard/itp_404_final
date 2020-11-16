@@ -15,6 +15,7 @@ function Songs() {
     fetch(`http://localhost:8080/songs`)
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         setData(result);
         setLoaded(true);
       });
