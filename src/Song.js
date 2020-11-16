@@ -23,7 +23,7 @@ function Song() {
 
   useEffect(() => {
     setLoaded(false);
-    fetch(`api/song/${id}`)
+    fetch(`/api/song/${id}`)
       .then((res) => res.json())
       .then((result) => {
         setTitle(result.title);
@@ -49,7 +49,7 @@ function Song() {
 
   function deleteSong() {
     setModalShown(false);
-    fetch(`api/song/${songID}`, {
+    fetch(`/api/song/${songID}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -100,7 +100,7 @@ function Song() {
                 <button onClick={showModal}>Delete Song</button>
                 <NavLink
                   className="table-link"
-                  to={`edit/${songID}`}
+                  to={`/song/edit/${songID}`}
                   exact={true}
                 >
                   Edit Song

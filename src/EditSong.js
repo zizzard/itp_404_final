@@ -20,7 +20,7 @@ function EditSong() {
 
   useEffect(() => {
     setLoaded(false);
-    fetch(`api/song/${id}`)
+    fetch(`/api/song/${id}`)
       .then((res) => res.json())
       .then((result) => {
         setData(result);
@@ -55,7 +55,7 @@ function EditSong() {
 
     console.log(obj);
 
-    fetch(`api/song/${songID}`, {
+    fetch(`/api/song/${songID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

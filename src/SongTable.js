@@ -24,7 +24,7 @@ function SongTable({ data }) {
                   <td>
                     <NavLink
                       className="table-link"
-                      to={`song/${song.id}`}
+                      to={`/song/${song.id}`}
                       exact={true}
                     >
                       Song Page

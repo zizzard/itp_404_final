@@ -17,7 +17,7 @@ function Search() {
       query: query,
     };
 
-    fetch(`api/search`, {
+    fetch(`/api/search`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
