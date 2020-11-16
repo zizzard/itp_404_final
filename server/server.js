@@ -6,7 +6,6 @@ const db = low(adapter);
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 //     "title": "Nikes",
 //     "artist": "Frank Ocean",
 //     "album": "Blonde",
-//     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
 app.post("/api/song", (req, res) => {
@@ -72,7 +70,6 @@ app.post("/api/search", (req, res) => {
 //     "title": "Nikes",
 //     "artist": "Frank Ocean",
 //     "album": "Blonde",
-//     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
 app.patch("/api/song/:id", (req, res) => {

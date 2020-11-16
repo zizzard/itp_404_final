@@ -8,7 +8,6 @@ function Add() {
   const [lyrics, setLyrics] = useState("");
   const [album, setAlbum] = useState("");
   const [artist, setArtist] = useState("");
-  const [length, setLength] = useState("");
 
   useEffect(() => {
     document.title = `Add a song`;
@@ -21,7 +20,6 @@ function Add() {
       title: title,
       artist: artist,
       album: album,
-      length: length,
       lyrics: lyrics,
     };
 
@@ -64,13 +62,6 @@ function Add() {
             value={album}
             onChange={(e) => setAlbum(e.target.value)}
             placeholder="Song album..."
-            className="add-field"
-          />
-          <input
-            type="text"
-            value={length}
-            onChange={(e) => setLength(e.target.value)}
-            placeholder="Song length (seconds)..."
             className="add-field"
           />
           <textarea

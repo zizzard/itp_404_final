@@ -14,7 +14,6 @@ function SongTable({ data }) {
               <th>Song Title</th>
               <th>Artist</th>
               <th>Album</th>
-              <th>Length (seconds)</th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +32,6 @@ function SongTable({ data }) {
                   <td>{song.title}</td>
                   <td>{song.artist}</td>
                   <td>{song.album}</td>
-                  <td>{song.length}</td>
                 </tr>
               );
             })}
