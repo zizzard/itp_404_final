@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 //     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
-app.post("api/song", (req, res) => {
+app.post("/api/song", (req, res) => {
   let id = nanoid();
   let post = req.body;
 
@@ -39,7 +39,7 @@ app.post("api/song", (req, res) => {
 });
 
 // URL: localhost:8080/api/song/:id
-app.get("api/song/:id", (req, res) => {
+app.get("/api/song/:id", (req, res) => {
   let id = req.params.id;
 
   let song = getSongById(id);
@@ -48,14 +48,14 @@ app.get("api/song/:id", (req, res) => {
 });
 
 // URL: localhost:8080/api/delete/:id
-app.delete("api/song/:id", (req, res) => {
+app.delete("/api/song/:id", (req, res) => {
   let id = req.params.id;
   let resp = deleteSong(id);
   res.send({});
 });
 
 // URL: localhost:8080/api/songs
-app.get("api/songs", (req, res) => {
+app.get("/api/songs", (req, res) => {
   let songs = getSongs();
   res.send(songs);
 });
@@ -65,7 +65,7 @@ app.get("api/songs", (req, res) => {
 // {
 //     "query": "search string"
 // }
-app.post("api/search", (req, res) => {
+app.post("/api/search", (req, res) => {
   let query = req.body.query;
 
   let result = searchSongs(query);
@@ -81,7 +81,7 @@ app.post("api/search", (req, res) => {
 //     "length": 314,
 //     "lyrics": "testing the lyrics"
 // }
-app.patch("api/song/:id", (req, res) => {
+app.patch("/api/song/:id", (req, res) => {
   let id = req.params.id;
   let changes = req.body;
 
