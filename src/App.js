@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 import Add from "./Add";
@@ -21,10 +17,21 @@ function App() {
   }, []);
   return (
     <Router>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="header">
-        <NavLink className="home" to={`/`} exact={true}>
+        <Link className="home" to={`/`} exact={true}>
           The Karaoke Machine
-        </NavLink>
+        </Link>
       </div>
       <Switch>
         <Route path="/" exact={true}>

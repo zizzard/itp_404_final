@@ -101,3 +101,94 @@ td {
   flex: 1 1 auto;
   padding: 1rem;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  width: 150px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 10px;
+  line-height: 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #3333ff;
+  border: 0px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.time {
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 25px;
+}
+
+.flex-center {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.song-buttons {
+  padding-top: 20px;
+}
+
+.search-bar {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  border: 0px;
+  border-radius: 10px;
+  height: 28px;
+  width: calc(100% - 150px);
+}
+
+.search-button {
+  width: 146px;
+  border-radius: 0px 10px 10px 0px;
+  height: 30px;
+  font-size: 16px;
+  background-color: #cccccc;
+  border: 0px;
+  cursor: pointer;
+}
+
+.add-field {
+  margin-bottom: 10px;
+}
+
+.add-button {
+  margin-top: 10px;
+  display: block;
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: center;
+  padding: 2px;
+  line-height: 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #3333ff;
+  border: 0px;
+}
+
+.add-label {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}

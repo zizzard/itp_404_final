@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, Link, Redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import Karaoke from "./Karaoke";
 import Modal from "./Modal";
@@ -16,6 +17,7 @@ function Song() {
   const [album, setAlbum] = useState("");
   const [lyrics, setLyrics] = useState("");
   const [songID, setSongID] = useState("");
+  const [redirectURL, setRedirectURL] = useState("");
 
   useEffect(() => {
     document.title = title + ", " + artist;
@@ -54,72 +56,96 @@ function Song() {
     })
       .then((res) => res.json())
       .then((result) => {
+        toast(`Successfully deleted the song: ${title}`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         console.log(result);
+        setRedirectURL("/");
       });
   }
 
-  return (
-    <>
-      {!karaoke ? (
-        <>
-          <div className="main-container">
-            <h1>Song</h1>
-            {loaded ? (
-              <>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Key</th>
-                      <th>Value</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Title</td>
-                      <td>{title}</td>
-                    </tr>
-                    <tr>
-                      <td>Artist</td>
-                      <td>{artist}</td>
-                    </tr>
-                    <tr>
-                      <td>Album</td>
-                      <td>{album}</td>
-                    </tr>
-                    <tr>
-                      <td>Lyrics</td>
-                      <td>{lyrics}</td>
-                    </tr>
-                    <tr>
-                      <td>ID</td>
-                      <td>{songID}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button onClick={flipKaraoke}>Turn on karaoke</button>
-                <button onClick={showModal}>Delete Song</button>
-                <NavLink
-                  className="table-link"
-                  to={`/song/edit/${songID}`}
-                  exact={true}
-                >
-                  Edit Song
-                </NavLink>
-              </>
-            ) : (
-              <p>Loading...</p>
-            )}
-          </div>
-          {modalShown && <Modal onClose={hideModal} onDelete={deleteSong} />}
-        </>
-      ) : (
-        <>
-          <Karaoke lrc={lyrics} />
-          <button onClick={flipKaraoke}>Karaoke</button>
-        </>
-      )}
-    </>
-  );
+  if (redirectURL === "") {
+    return (
+      <>
+        {!karaoke ? (
+          <>
+            <div className="main-container">
+              <h1>Song</h1>
+              {loaded ? (
+                <>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Title</td>
+                        <td>{title}</td>
+                      </tr>
+                      <tr>
+                        <td>Artist</td>
+                        <td>{artist}</td>
+                      </tr>
+                      <tr>
+                        <td>Album</td>
+                        <td>{album}</td>
+                      </tr>
+                      <tr>
+                        <td>Lyrics</td>
+                        <td>{lyrics}</td>
+                      </tr>
+                      <tr>
+                        <td>ID</td>
+                        <td>{songID}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className="song-buttons">
+                    <button className="button" onClick={flipKaraoke}>
+                      Turn on karaoke
+                    </button>
+                    <button className="button" onClick={showModal}>
+                      Delete Song
+                    </button>
+                    <Link
+                      className="link button"
+                      to={`/song/edit/${songID}`}
+                      exact={true}
+                    >
+                      Edit Song
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
+            {modalShown && <Modal onClose={hideModal} onDelete={deleteSong} />}
+          </>
+        ) : (
+          <>
+            <Karaoke lrc={lyrics} />
+            <div className="flex-center">
+              <button className="button" onClick={flipKaraoke}>
+                Turn Off Karaoke
+              </button>
+            </div>
+          </>
+        )}
+      </>
+    );
+  } else {
+    return <Redirect to={redirectURL} />;
+  }
 }
 
 export default Song;

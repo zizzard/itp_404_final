@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SongTable({ data }) {
   return (
@@ -21,13 +21,13 @@ function SongTable({ data }) {
               return (
                 <tr key={song.id}>
                   <td>
-                    <NavLink
+                    <Link
                       className="table-link"
                       to={`/song/${song.id}`}
                       exact={true}
                     >
                       Song Page
-                    </NavLink>
+                    </Link>
                   </td>
                   <td>{song.title}</td>
                   <td>{song.artist}</td>

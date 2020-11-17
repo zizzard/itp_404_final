@@ -33,7 +33,14 @@ function Karaoke({ lrc }) {
 
   const lineRenderer = useCallback(
     ({ lrcLine: { millisecond, content }, index, active }) => (
-      <div style={{ textAlign: "center", color: active ? "green" : "inherit" }}>
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: active ? "18px" : "inherit",
+          fontWeight: active ? "700" : "inherit",
+          color: active ? "green" : "inherit",
+        }}
+      >
         {content}
       </div>
     ),
@@ -43,14 +50,20 @@ function Karaoke({ lrc }) {
   return (
     <>
       <div>
-        <p>{timer}</p>
         <div className="buttons">
           {!timing ? (
-            <button onClick={handleStart}>Start</button>
+            <button className="button" onClick={handleStart}>
+              Start
+            </button>
           ) : (
-            <button onClick={handlePause}>Pause</button>
+            <button className="button" onClick={handlePause}>
+              Pause
+            </button>
           )}
-          <button onClick={handleReset}>Reset</button>
+          <div className="time">{Math.floor(timer / 1000)} seconds</div>
+          <button className="button" onClick={handleReset}>
+            Reset
+          </button>
         </div>
       </div>
       <Lrc
