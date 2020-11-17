@@ -29,7 +29,7 @@ function App() {
         pauseOnHover
       />
       <div className="header">
-        <Link className="home" to={`/`} exact={true}>
+        <Link className="home" to={`/`}>
           The Karaoke Machine
         </Link>
       </div>

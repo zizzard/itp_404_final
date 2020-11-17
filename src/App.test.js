@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+//Ensure that the Links are properly rendered on the home page
+//Test 1 of 15
+test("renders links", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText("Search for a song").closest("a")).toHaveAttribute(
+    "href",
+    "/search"
+  );
+  expect(screen.getByText("View all songs").closest("a")).toHaveAttribute(
+    "href",
+    "/songs"
+  );
+  expect(screen.getByText("Add a new songs").closest("a")).toHaveAttribute(
+    "href",
+    "/add"
+  );
 });

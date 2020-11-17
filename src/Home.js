@@ -7,13 +7,13 @@ function Home() {
   return (
     <div className="main-container">
       <h1>Home</h1>
-      <Link className="home-link" to={`/search`} exact={true}>
+      <Link className="home-link" to={`/search`}>
         Search for a song
       </Link>
-      <Link className="home-link" to={`/songs`} exact={true}>
+      <Link className="home-link" to={`/songs`}>
         View all songs
       </Link>
-      <Link className="home-link" to={`/add`} exact={true}>
+      <Link className="home-link" to={`/add`}>
         Add a new songs
       </Link>
     </div>

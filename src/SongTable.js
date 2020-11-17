@@ -21,11 +21,7 @@ function SongTable({ data }) {
               return (
                 <tr key={song.id}>
                   <td>
-                    <Link
-                      className="table-link"
-                      to={`/song/${song.id}`}
-                      exact={true}
-                    >
+                    <Link className="table-link" to={`/song/${song.id}`}>
                       Song Page
                     </Link>
                   </td>

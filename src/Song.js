@@ -116,11 +116,7 @@ function Song() {
                     <button className="button" onClick={showModal}>
                       Delete Song
                     </button>
-                    <Link
-                      className="link button"
-                      to={`/song/edit/${songID}`}
-                      exact={true}
-                    >
+                    <Link className="link button" to={`/song/edit/${songID}`}>
                       Edit Song
                     </Link>
                   </div>
