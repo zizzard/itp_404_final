@@ -65,7 +65,6 @@ function Song() {
           draggable: true,
           progress: undefined,
         });
-        console.log(result);
         setRedirectURL("/");
       });
   }

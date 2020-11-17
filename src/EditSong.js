@@ -55,8 +55,6 @@ function EditSong() {
       obj.lyrics = lyrics;
     }
 
-    console.log(obj);
-
     fetch(`/api/song/${songID}`, {
       method: "PATCH",
       headers: {
@@ -75,7 +73,6 @@ function EditSong() {
           draggable: true,
           progress: undefined,
         });
-        console.log(result);
         setRedirectURL(`/song/${result.id}`);
       });
   }

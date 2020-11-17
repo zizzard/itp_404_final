@@ -15,7 +15,6 @@ function Songs() {
     fetch(`/api/songs`)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         setData(result);
         setLoaded(true);
       });

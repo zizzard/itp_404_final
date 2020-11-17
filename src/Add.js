@@ -79,7 +79,6 @@ function Add() {
           draggable: true,
           progress: undefined,
         });
-        console.log(result);
         setRedirectURL(`/song/${result.id}`);
       });
   }

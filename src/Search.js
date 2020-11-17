@@ -17,8 +17,6 @@ function Search() {
       query: query,
     };
 
-    console.log(query);
-
     fetch(`/api/search`, {
       method: "POST",
       headers: {
