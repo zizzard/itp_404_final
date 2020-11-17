@@ -89,13 +89,14 @@ td {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0 1rem;
   border-bottom: 1px solid #dee2e6;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
 
 .modal-body {
+  display: flex;
   position: relative;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -196,4 +197,20 @@ td {
 .add-error {
   color: red;
   margin-bottom: 10px;
+}
+
+.modal-button {
+  display: block;
+  text-decoration: none;
+  width: 150px;
+  border-radius: 15px;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 10px;
+  line-height: 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #3333ff;
+  border: 0px;
+  margin-right: 10px;
 }

@@ -11,13 +11,17 @@ export default function ProfileModal({ onClose, onDelete }) {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">
+              <h2 className="modal-title">
                 Are you sure you want to delete this song?
-              </h5>
+              </h2>
             </div>
             <div className="modal-body">
-              <button onClick={onDelete}>Delete</button>
-              <button onClick={onClose}>Cancel</button>
+              <button className="modal-button" onClick={onDelete}>
+                Delete
+              </button>
+              <button className="modal-button" onClick={onClose}>
+                Cancel
+              </button>
             </div>
           </div>
         </div>
