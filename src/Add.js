@@ -144,8 +144,10 @@ function Add() {
               placeholder="Song lyrics..."
               className="add-lyrics"
             />
-            <div className="add-error">{lyricError}</div>
-            <button onClick={add} className="add-button">
+            <div className="add-error" id="lyric-error">
+              {lyricError}
+            </div>
+            <button id="add" onClick={add} className="add-button">
               Add
             </button>
           </form>

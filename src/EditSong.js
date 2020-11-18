@@ -134,11 +134,13 @@ function EditSong() {
                 placeholder="Song lyrics..."
                 className="add-lyrics"
               />
-              <button onClick={updateSong}>Update Song</button>
+              <button id="update" onClick={updateSong}>
+                Update Song
+              </button>
             </form>
           </>
         ) : (
-          <p>Loading...</p>
+          <p id="loading">Loading...</p>
         )}
       </div>
     );

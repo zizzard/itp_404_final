@@ -109,19 +109,23 @@ function Song() {
                     </tbody>
                   </table>
                   <div className="song-buttons">
-                    <button className="button" onClick={flipKaraoke}>
+                    <button
+                      className="button"
+                      id="karaoke-on"
+                      onClick={flipKaraoke}
+                    >
                       Turn on karaoke
                     </button>
                     <button className="button" onClick={showModal}>
                       Delete Song
                     </button>
                     <Link className="link button" to={`/song/edit/${songID}`}>
-                      Edit Song
+                      <p id="edit">Edit Song</p>
                     </Link>
                   </div>
                 </>
               ) : (
-                <p>Loading...</p>
+                <p id="loading">Loading...</p>
               )}
             </div>
             {modalShown && <Modal onClose={hideModal} onDelete={deleteSong} />}
@@ -130,7 +134,7 @@ function Song() {
           <>
             <Karaoke lrc={lyrics} />
             <div className="flex-center">
-              <button className="button" onClick={flipKaraoke}>
+              <button className="button" id="karaoke-off" onClick={flipKaraoke}>
                 Turn Off Karaoke
               </button>
             </div>
