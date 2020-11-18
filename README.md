@@ -10,7 +10,7 @@
 
 ## Project Demo
 
-[Zoom Recording](https://tbd.com)
+[Zoom Recording](https://usc.zoom.us/rec/share/kHmWA_5RBpAoA4u_2W8oCi-oxiRqyy2q_eZBddVo6k4u3ZJqR4ITHZFbhYUHB4tO.YtasEUM3047n083P?startTime=1605680670000)
 
 ## Project Test Results
 
